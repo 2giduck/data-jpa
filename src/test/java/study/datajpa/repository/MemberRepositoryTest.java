@@ -226,4 +226,16 @@ class MemberRepositoryTest {
             System.out.println("memberTeam = " + member.getTeam().getName());
         }
     }
+
+    @Test
+    public void queryHint(){
+        //when
+        Member member1 = memberRepository.save(new Member("member1", 10));
+        em.flush();
+        em.clear();
+
+        //when
+        Member findMember = memberRepository.findReadOnlyByUsername(member1.getUsername());
+        findMember.setUsername("member2");
+    }
 }
