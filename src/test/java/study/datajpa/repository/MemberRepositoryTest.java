@@ -149,4 +149,5 @@ class MemberRepositoryTest {
         Optional<Member> result = memberRepository.findOptionalByUsername("SEF");
         System.out.println("findMember = " + result);
     }
+
 }
