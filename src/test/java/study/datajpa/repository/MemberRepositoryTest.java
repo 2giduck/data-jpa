@@ -238,4 +238,9 @@ class MemberRepositoryTest {
         Member findMember = memberRepository.findReadOnlyByUsername(member1.getUsername());
         findMember.setUsername("member2");
     }
+
+    @Test
+    public void callCustom(){
+        List<Member> result = memberRepository.findMemberCustom();
+    }
 }
